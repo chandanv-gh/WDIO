@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path');
-const RequestBuilder = require('../builders/requestBuilder');
+const RequestBuilder = require('../builder/requestBuilder.js');
 const apiRequest = require('../utils/apiClient');
 const { assertStatus, assertBody } = require('../utils/assertions');
+
 
 describe('Create Post API', () => {
     it('should create a new post and match the response', async () => {
