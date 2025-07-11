@@ -1,4 +1,4 @@
-class RequestBuilder {
+class PayloadBuilder {
     constructor() {
         this._headers = {};
         this._params = {};
@@ -43,4 +43,4 @@ class RequestBuilder {
     }
 }
 
-module.exports = RequestBuilder; 
+module.exports = PayloadBuilder; 

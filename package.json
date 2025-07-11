@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./src/tests/*.js",
-    "wdio": "wdio run ./wdio.conf.js"
+    "test": "mocha ./tests/api/**/*.js",
+    "test:ui": "echo 'Add your UI test runner here'"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,9 @@
     "@wdio/local-runner": "^9.17.0",
     "@wdio/mocha-framework": "^9.17.0",
     "@wdio/spec-reporter": "^9.17.0",
-    "axios": "^1.10.0"
+    "axios": "^1.6.0",
+    "mocha": "^10.0.0",
+    "chai": "^4.3.0",
+    "webdriverio": "^8.0.0"
   }
 }
