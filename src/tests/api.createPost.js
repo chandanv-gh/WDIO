@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { BASE_URL } = require('../utils/env');
 const RequestBuilder = require('../builder/requestBuilder.js');
 const apiRequest = require('../utils/apiClient');
 const { assertStatus, assertBody } = require('../utils/assertions');
@@ -14,7 +15,7 @@ describe('Create Post API', () => {
         // Build request
         const requestConfig = new RequestBuilder()
             .setMethod('POST')
-            .setUrl('https://jsonplaceholder.typicode.com/posts')
+            .setUrl(`${BASE_URL}/posts`)
             .setHeaders({ 'Content-type': 'application/json; charset=UTF-8' })
             .setBody(requestBody)
             .build();
