@@ -1,52 +1,59 @@
-# Javascript API Framework (WebdriverIO)
-
-This project is a robust, standards-based framework for API (HTTP endpoint) testing using WebdriverIO and Axios.
-
-## Features
-- **Builder Pattern** for constructing requests
-- **Request/Response Data Files** for clean test data management
-- **Reusable Utilities** for API calls and assertions
-- **Environment Config** via `.env` and utility
-- **Organized Structure** for maintainability
+# Javascript API & UI Test Framework
 
 ## Project Structure
+
 ```
-/test
-  /specs           # Test cases
-  /builders        # Request builders
-  /data
-    /requests      # Request payloads
-    /responses     # Expected responses/schemas
-  /utils           # Helpers (request, assertions, env, etc.)
-.env               # Environment variables (BASE_URL, etc.)
-wdio.conf.js       # WDIO config
-README.md
+/project-root
+│
+├── /builder            # For building request payloads, headers, test data
+│   └── payloadBuilder.js
+│
+├── /asserter           # Custom assertion logic
+│   └── responseAsserter.js
+│
+├── /helper             # Common utility/helper functions
+│   └── logger.js
+│   └── dateUtil.js
+│
+├── /factory            # For generating test data or mock objects
+│   └── userFactory.js
+│
+├── /endpoints          # All endpoint URLs, organized by feature
+│   └── userEndpoints.js
+│
+├── /entities           # Entity classes or POJOs (Plain Old JavaScript Objects)
+│   └── userEntity.js
+│
+├── /htmlMethods        # For reusable HTML element interaction (UI layer)
+│   └── htmlActions.js
+│
+├── /env                # Environment-related configs
+│   └── config.js
+│
+├── /tests              # Actual test cases
+│   └── /api            # For API test cases
+│   └── /ui             # For UI test cases
+│   └── userTest.js
+│
+├── .env                # ENV variables (baseURL, env name, etc.)
+├── wdio.conf.js        # WDIO config
+├── package.json
 ```
 
-## Setup
+## Scripts
+- `npm test` – Run all API tests in `tests/api/`
+- `npm run test:ui` – Placeholder for UI test runner
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-2. (Optional) Create a `.env` file in the root with:
-   ```env
-   BASE_URL=https://jsonplaceholder.typicode.com
-   ```
+## Dependencies
+- `axios` – For HTTP requests
+- `mocha` – Test runner
+- `chai` – Assertions
+- `webdriverio` – UI automation
 
-## Running Tests
-To run all API tests:
-```bash
-npm run wdio
-```
-
-## Example Test
-See `test/specs/api.createPost.js` for a sample test using the builder, data files, and utilities.
-
-## Extending
-- Add new request/response bodies in `test/data/`
-- Add new builders or utilities as needed
-- Use `process.env` or `test/utils/env.js` for config
+## How to Extend
+- Add new payload builders, asserters, helpers, factories, endpoints, or entities as needed.
+- Place API tests in `tests/api/` and UI tests in `tests/ui/`.
+- Use `.env` and `env/config.js` for environment-specific configuration.
 
 ---
 
