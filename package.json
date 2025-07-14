@@ -4,6 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio run ./wdio.conf.js",
+    "test:smoke": "WDIO_GREP='#smoke' npm test",
+    "test:sanity": "WDIO_GREP='#sanity' npm test",
     "report:allure": "allure generate allure-results --clean && allure open"
   },
   "keywords": [],

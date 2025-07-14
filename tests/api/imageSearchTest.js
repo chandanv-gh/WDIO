@@ -6,7 +6,7 @@ const { assertImageSearchResponse } = require('../../asserter/image/imageAsserte
 const ImageEntity = require('../../entities/image/imageEntity');
 
 describe('Image Search API', () => {
-  it('should return a list of images with required fields', async () => {
+  it('should return a list of images with required fields #smoke', async () => {
     const params = buildImageSearchPayload({ limit: 5 });
     const response = await axios.get(`${config.cat}${endpoints.images.search}`, { params });
     // Assert response
