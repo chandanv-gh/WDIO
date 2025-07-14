@@ -8,7 +8,7 @@ const UserEntity = require('../../entities/user/userEntity');
 const allRoles = require('../../constants/roles');
 
 describe('User Filter API', () => {
-  it('should return a list of users with required fields for all roles', async () => {
+  it('should return a list of users with required fields for all roles #smoke', async () => {
     const payload = buildUserFilterPayload();
     const response = await axios.post(`${config.cat}${endpoints.user.filter}`, payload);
     assertUserFilterResponse(response.data);
@@ -18,7 +18,7 @@ describe('User Filter API', () => {
     });
   });
 
-  it('should return users for a subset of roles', async () => {
+  it('should return users for a subset of roles #sanity', async () => {
     const payload = buildUserFilterPayload({ roles: [allRoles[0], allRoles[1]] });
     const response = await axios.post(`${config.cat}${endpoints.user.filter}`, payload);
     assertUserFilterResponse(response.data);
