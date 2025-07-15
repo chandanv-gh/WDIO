@@ -33,7 +33,6 @@ exports.config = {
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000,
-        grep: process.env.WDIO_GREP || undefined // Use an environment variable for flexibility
     },
     afterTest: async function(test, context, { error, result, duration, passed, retries }) {
         if (error) {
